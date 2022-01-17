@@ -66,7 +66,15 @@ class HomeController extends Controller
                             strip_tags($contents)
                             )
                         ;
-            
+
+            $whatCount = substr_count(strtolower($contents),"what");
+            $howCount = substr_count(strtolower($contents),"how");
+            $whyCount = substr_count(strtolower($contents),"why");
+            $whenCount = substr_count(strtolower($contents),"when");
+            $whereCount = substr_count(strtolower($contents),"where");
+
+
+
 
             Log::info(count($words));
             Log::info("words count");
@@ -116,12 +124,27 @@ class HomeController extends Controller
             Log::info("titleOfThePage");
             Log::info($metaTags);
             Log::info("MetaTags");
+            Log::info($whatCount);
+            Log::info("What count");
+            Log::info($howCount);
+            Log::info("How count");
+            Log::info($whyCount);
+            Log::info("Why count");
+            Log::info($whenCount);
+            Log::info("When count");
+            Log::info($whereCount);
+            Log::info("Where count");
             foreach ($imgTags as $images) {
                 // Log::info( $images->getAttribute('src'));
             }
             Log::info("============================");
             foreach ($externalLinks as $links){
                 // Log::info($links->getAttribute('href'));
+                // if($links->getAttribute('href') == 'match with the domain site then it will be a internal link'){
+                //     $internal_links = "internal links will ho here";
+                // }else{
+                //     $externalLinks;
+                // }
             }
           
             // print_r($result);

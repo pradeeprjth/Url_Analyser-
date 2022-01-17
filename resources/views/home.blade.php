@@ -7,7 +7,6 @@
       @csrf
       <div class="form-group">
          <label for="urlExampleLabel">URL</label>
-         <input type="hidden" name="csrfToken" value="{{ csrf_token() }}">
          <input type="text" class="form-control" name="url" id="urlTextField" aria-describedby="rulHELP"
             placeholder="Enter URL">
          <small id="rulHELP" class="form-text text-muted">Plase past a url for anylizing</small>
@@ -15,9 +14,6 @@
       <button type="submit" class="btn btn-primary">Submit</button>
    </form>
    <br>
-    <div id="target" style="height: 200px; width:200px;">
-
-    </div>
    <section>
         <ul class="list-group">
             <li class="list-group-item">Number of Words on the page</li>
