@@ -18,4 +18,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::post('url','HomeController@url')->name('url');
+Route::post('url_nalyser','HomeController@url')->name('url_nalyser');

@@ -3,32 +3,55 @@
 @section('content')
 
 <div class="container">
-   <form action="{{route('url')}}" method="POST" >
+   <form action="{{route('url_nalyser')}}" method="POST" id="urlSumition">
       @csrf
       <div class="form-group">
          <label for="urlExampleLabel">URL</label>
          <input type="text" class="form-control" name="url" id="urlTextField" aria-describedby="rulHELP"
             placeholder="Enter URL">
-         <small id="rulHELP" class="form-text text-muted">Plase past a url for anylizing</small>
+         <small id="showErrorMessage" class="form-text text-muted">Plase past a url for anylizing</small>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="sumit" id="resetSubmitButton" class="btn btn-primary">Submit</button>
    </form>
    <br>
    <section>
-        <ul class="list-group">
-            <li class="list-group-item">Number of Words on the page</li>
-            <li class="list-group-item">Number of Characters on the page</li>
-            <li class="list-group-item">Number of Images with Image Name</li>
-            <li class="list-group-item">Number Internal URLs with List</li>
-            <li class="list-group-item">Number External URLs with List</li>
-            <li class="list-group-item">Number of Paragraph</li>
-            <li class="list-group-item">Number of Embed Video</li>
-            <li class="list-group-item">Number of H1/H2/H3/H4/H5/H5</li>
-            <li class="list-group-item">Title of the Page</li>
-            <li class="list-group-item">Meta Keyword of the page</li>
-            <li class="list-group-item">Meta Description of the page</li>
-            <li class="list-group-item">Number of Keywords which is matching with "What" "How" "Why" "When" "Where"</li>
-        </ul>
+      <ul class="list-group" id="renderFetchedData">
+
+      </ul>
+   </section>
+   <h4>List Of Images</h4>
+   <section>
+      <ul id="listOfImage">
+
+      </ul>
+   </section>
+   <h4>List of Interanl Links</h4>
+   <section>
+      <ul id="listOfExternalLinks">
+
+      </ul>
+   </section>
+   <h4>List of Exteranl Links</h4>
+   <section>
+      <ul id="listOfInternalLinks">
+
+      </ul>
+   </section>
+   <h4>Meta tags with there Discription</h4>
+   <section>
+      <table class="table">
+         <thead id="hideThisFirst">
+            <tr>
+               <th scope="col">Meta Tags</th>
+               <th scope="col">Description</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr id="metaTable">
+              
+            </tr>
+         </tbody>
+      </table>
    </section>
 </div>
 @endsection
